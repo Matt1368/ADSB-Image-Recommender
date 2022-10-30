@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ADSB_Image_Recommender.Views.AboutPage"
+             xmlns:vm="clr-namespace:ADSB_Image_Recommender.ViewModels"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="Moccasin" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,50,0,50" VerticalOptions="FillAndExpand">
+                    <Image Source="about_image.png" VerticalOptions="Center" HeightRequest="90" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Label Text="Generate Images and Have Fun" FontSize="Medium" FontFamily="Lobster"/>
+                <Label Text="Use this app to generate fun images and send them to youself and you friends!" FontSize="16" FontFamily ="Lobster" Padding="0,0,0,0"/>
+             </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
