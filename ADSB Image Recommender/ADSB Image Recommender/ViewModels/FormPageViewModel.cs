@@ -1,6 +1,7 @@
 ﻿using ADSB_Image_Recommender.Models;
 using ADSB_Image_Recommender.Views;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace ADSB_Image_Recommender.ViewModels
         public Command AddItemCommand { get; }
         public Command<Item> ItemTapped { get; }
 
+        public IList<FormContents> ImageTypeList { get; set; }
+
+        public IList<FormContents> ImageTopicList { get; set; }
+
+
         public FormPageViewModel()
         {
             Title = "Browse";
@@ -26,6 +32,31 @@ namespace ADSB_Image_Recommender.ViewModels
             ItemTapped = new Command<Item>(OnItemSelected);
 
             AddItemCommand = new Command(OnAddItem);
+
+            try
+            {
+                ImageTypeList = new ObservableCollection<FormContents>();
+                ImageTypeList.Add(new FormContents { ImageType = "Gif" });
+                ImageTypeList.Add(new FormContents { ImageType = "Static" });
+            }
+            catch (Exception ex)
+            {
+
+            }
+            try
+            {
+                ImageTopicList = new ObservableCollection<FormContents>();
+                ImageTopicList.Add(new FormContents { ImageTopic = "Animals" });
+                ImageTopicList.Add(new FormContents { ImageTopic = "Food" });
+                ImageTopicList.Add(new FormContents { ImageTopic = "Sports" });
+                ImageTopicList.Add(new FormContents { ImageTopic = "Nature" });
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+
         }
 
         async Task ExecuteLoadItemsCommand()
