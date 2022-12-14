@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:ADSB_Image_Recommender.ViewModels" 
+             x:DataType="viewmodels:FormPageViewModel"
+             x:Class="ADSB_Image_Recommender.Views.FormVideoPage"
+             xmlns:local="clr-namespace:ADSB_Image_Recommender.ViewModels"  
+>
+    <ContentPage.BindingContext>
+        <local:FormPageVideoViewModel></local:FormPageVideoViewModel>
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout>
+            <Label Padding="20,25,0,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Video Send Form:" FontAttributes="Bold" FontSize="16"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <BoxView Color="AntiqueWhite" 
+             CornerRadius="10"
+             WidthRequest="365"
+             HeightRequest="360"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"/>
+            <Grid Margin="20,-360,20,20">
+                <Entry 
+                    x:Name="VideoNameEntry" 
+                    Placeholder="Name of Recipient"
+                    />
+            </Grid>
+            <Grid Margin="20,-20,20,20">
+                <Picker ItemDisplayBinding="{Binding VideoTopic}" 
+                        x:Name="VideoTopicEntry" 
+                        Title="Select Image Topic"
+                        ItemsSource = "{Binding VideoTopicList}" />
+
+            </Grid>
+            
+            <Grid Margin="20,-20,20,20">
+                <Entry 
+                    x:Name="VideoQuantityEntry"
+                    Placeholder="Quantity"
+                    Keyboard="Numeric"
+                    MaxLength ="1"
+                    />
+            </Grid>
+            <Grid Margin="20,-20,20,20">
+                <Entry 
+                    x:Name="VideoEmailFirst" 
+                    Placeholder="Enter Recipient Email"
+                    />
+            </Grid>
+            <Grid Margin="20,-20,20,20">
+                <Entry 
+                    x:Name="VideoEmailSecond" 
+                    Placeholder="Email of Friend To Send To (Optional)"
+                    />
+            </Grid>
+            <Grid Margin="60,-20,60,20">
+                <Button Text="Send" 
+                        Clicked="Button_Clicked"
+                        HeightRequest = "40"
+                        BackgroundColor="DarkSalmon"
+                        TextColor="Ivory" />
+
+            </Grid>
+           
+        </StackLayout>
+    </Grid>
+</ContentPage>

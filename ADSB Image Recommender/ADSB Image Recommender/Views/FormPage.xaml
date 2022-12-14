@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:viewmodels="clr-namespace:ADSB_Image_Recommender.ViewModels" 
              x:DataType="viewmodels:FormPageViewModel"
-             x:Class="ADSB_Image_Recommender.Views.Page1"
+             x:Class="ADSB_Image_Recommender.Views.FormPage"
              xmlns:local="clr-namespace:ADSB_Image_Recommender.ViewModels"  
 >
     <ContentPage.BindingContext>

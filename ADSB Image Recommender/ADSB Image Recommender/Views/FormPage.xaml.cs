@@ -14,11 +14,11 @@ using System.Net.Mail;
 namespace ADSB_Image_Recommender.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page1
+    public partial class FormPage
         : ContentPage
     {
         FormContents _viewModel;
-        public Page1()
+        public FormPage()
         {
             InitializeComponent();
 

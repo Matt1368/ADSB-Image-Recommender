@@ -31,7 +31,8 @@
 
     <TabBar>
         <ShellContent Title="About" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
-        <ShellContent Title="Generate" Icon="icon_generate.png" ContentTemplate="{DataTemplate local:Page1}" />
+        <ShellContent Title="Generate" Icon="icon_generate.png" ContentTemplate="{DataTemplate local:FormPage}" />
+        <ShellContent Title="Generate Video" Icon ="icon_generate.png" ContentTemplate ="{DataTemplate local:FormVideoPage}"/>
     </TabBar>
 
     <!--

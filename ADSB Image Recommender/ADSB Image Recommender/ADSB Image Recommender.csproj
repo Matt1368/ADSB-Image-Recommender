@@ -14,10 +14,16 @@
     <Compile Update="Views\FormPage.xaml.cs">
       <DependentUpon>FormPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\FormVideoPage.xaml.cs">
+      <DependentUpon>FormVideoPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Views\FormPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\FormVideoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
