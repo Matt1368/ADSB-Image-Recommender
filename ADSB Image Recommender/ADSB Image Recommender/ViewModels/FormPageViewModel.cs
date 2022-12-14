@@ -33,28 +33,16 @@ namespace ADSB_Image_Recommender.ViewModels
 
             AddItemCommand = new Command(OnAddItem);
 
-            try
-            {
-                ImageTypeList = new ObservableCollection<FormContents>();
-                ImageTypeList.Add(new FormContents { ImageType = "Gif" });
-                ImageTypeList.Add(new FormContents { ImageType = "Static" });
-            }
-            catch (Exception ex)
-            {
-
-            }
-            try
-            {
-                ImageTopicList = new ObservableCollection<FormContents>();
-                ImageTopicList.Add(new FormContents { ImageTopic = "Animals" });
-                ImageTopicList.Add(new FormContents { ImageTopic = "Food" });
-                ImageTopicList.Add(new FormContents { ImageTopic = "Sports" });
-                ImageTopicList.Add(new FormContents { ImageTopic = "Nature" });
-            }
-            catch (Exception ex)
-            {
-
-            }
+            ImageTypeList = new ObservableCollection<FormContents>();
+            ImageTypeList.Add(new FormContents { ImageType = "Gif" });
+            ImageTypeList.Add(new FormContents { ImageType = "Static" });
+           
+            ImageTopicList = new ObservableCollection<FormContents>();
+            ImageTopicList.Add(new FormContents { ImageTopic = "Animals" });
+            ImageTopicList.Add(new FormContents { ImageTopic = "Food" });
+            ImageTopicList.Add(new FormContents { ImageTopic = "Sports" });
+            ImageTopicList.Add(new FormContents { ImageTopic = "Nature" });
+            
 
 
         }

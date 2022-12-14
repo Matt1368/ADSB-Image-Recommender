@@ -13,5 +13,9 @@ namespace ADSB_Image_Recommender.Models
         public int ImageQunatity { get; set; }
 
         public string ImageType { get; set; }
+
+        public string emailFirst { get; set; }
+
+        public string emailSecond { get; set; }
     }
 }

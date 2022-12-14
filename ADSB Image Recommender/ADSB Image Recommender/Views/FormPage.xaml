@@ -1,8 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:ADSB_Image_Recommender.ViewModels" x:DataType="viewmodels:FormPageViewModel"
-             x:Class="ADSB_Image_Recommender.Views.Page1">
-    <ContentPage.Content>
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:ADSB_Image_Recommender.ViewModels" 
+             x:DataType="viewmodels:FormPageViewModel"
+             x:Class="ADSB_Image_Recommender.Views.Page1"
+             xmlns:local="clr-namespace:ADSB_Image_Recommender.ViewModels"  
+>
+    <ContentPage.BindingContext>
+        <local:FormPageViewModel></local:FormPageViewModel>
+    </ContentPage.BindingContext>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -47,16 +53,16 @@
                 </Grid>
                 <Grid Margin="20,-20,20,20">
                     <Entry 
-                    x:Name="QuantityEntrySecond"
-                    Placeholder="Quantity (Second Item)"
+                    x:Name="QuantityEntry"
+                    Placeholder="Quantity"
                     Keyboard="Numeric"
-                    MaxLength ="2"
+                    MaxLength ="1"
                     />
                 </Grid>
                 <Grid Margin="20,-20,20,20">
                     <Entry 
                     x:Name="EmailFirst" 
-                    Placeholder="Enter Email Recipient"
+                    Placeholder="Enter Recipient Email"
                     />
                 </Grid>
                 <Grid Margin="20,-20,20,20">
@@ -65,14 +71,28 @@
                     Placeholder="Email of Friend To Send To (Optional)"
                     />
                 </Grid>
-                <Grid Margin="60,-20,60,20">
-                    <Button Text="Order" 
+            <Grid Margin="60,-20,60,20">
+                <Button Text="Send" 
+                        Clicked="Button_Clicked"
                         HeightRequest = "40"
                         BackgroundColor="DarkSalmon"
                         TextColor="Ivory" />
 
-                </Grid>
-            </StackLayout>
+            </Grid>
+            <BoxView Color="AntiqueWhite" 
+             CornerRadius="10"
+             WidthRequest="365"
+             HeightRequest="80"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"/>
+            <Grid Margin="60,-65,60,20">
+                <Button Text="View Images" 
+                        Clicked="btnView_Clicked"
+                        HeightRequest = "40"
+                        BackgroundColor="DarkSalmon"
+                        TextColor="Ivory" />
+
+            </Grid>
+        </StackLayout>
         </Grid>
-    </ContentPage.Content>
 </ContentPage>
