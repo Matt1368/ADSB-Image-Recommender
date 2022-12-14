@@ -31,14 +31,10 @@ namespace ADSB_Image_Recommender.Views
             lbl4.FontSize = 20;
             lbl4.TextColor = Color.Gray;
 
-            Image img1 = new Image();
-            img1.Source = "lion.png";
-            Image img2 = new Image();
-            img2.Source = "blank.png";
-            Image img3 = new Image();
-            img3.Source = "blank.png";
-            Image img4 = new Image();
-            img4.Source = "blank.png";
+            Image img1 = new Image { Source = "lion.png" };
+            Image img2 = new Image { Source = "blank.png" };
+            Image img3 = new Image { Source = "blank.png" };
+            Image img4 = new Image { Source = "blank.png" };
 
             if (num >= 2)
             {

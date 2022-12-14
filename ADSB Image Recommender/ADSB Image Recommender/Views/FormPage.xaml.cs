@@ -14,7 +14,8 @@ using System.Net.Mail;
 namespace ADSB_Image_Recommender.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page1 : ContentPage
+    public partial class Page1
+        : ContentPage
     {
         FormContents _viewModel;
         public Page1()
@@ -153,6 +154,34 @@ namespace ADSB_Image_Recommender.Views
             if (imageTopic.ImageTopic == "Animals" && imageType.ImageType == "Static")
             {
                 await Navigation.PushAsync(new AnimalStatic(Int32.Parse(QuantityEntry.Text)));
+            }
+            if (imageTopic.ImageTopic == "Animals" && imageType.ImageType == "Gif")
+            {
+                await Navigation.PushAsync(new AnimalGIF(Int32.Parse(QuantityEntry.Text)));
+            }
+            if (imageTopic.ImageTopic == "Food" && imageType.ImageType == "Static")
+            {
+                await Navigation.PushAsync(new FoodStatic(Int32.Parse(QuantityEntry.Text)));
+            }
+            if (imageTopic.ImageTopic == "Food" && imageType.ImageType == "Gif")
+            {
+                await Navigation.PushAsync(new FoodGIF(Int32.Parse(QuantityEntry.Text)));
+            }
+            if (imageTopic.ImageTopic == "Sports" && imageType.ImageType == "Static")
+            {
+                await Navigation.PushAsync(new SportsStatic(Int32.Parse(QuantityEntry.Text)));
+            }
+            if (imageTopic.ImageTopic == "Sports" && imageType.ImageType == "Gif")
+            {
+                await Navigation.PushAsync(new SportsGIF(Int32.Parse(QuantityEntry.Text)));
+            }
+            if (imageTopic.ImageTopic == "Nature" && imageType.ImageType == "Static")
+            {
+                await Navigation.PushAsync(new NatureStatic(Int32.Parse(QuantityEntry.Text)));
+            }
+            if (imageTopic.ImageTopic == "Nature" && imageType.ImageType == "Gif")
+            {
+                await Navigation.PushAsync(new NatureGIF(Int32.Parse(QuantityEntry.Text)));
             }
         }
 
